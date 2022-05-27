@@ -1,0 +1,13 @@
+config/workdir_*
+obj/*
+lib/*
+*~
+*.o
+*.pyc
+PostAnalyzer/bin/*
+PostAnalyzer/obj/*
+PostAnalyzer/lib/*
+.DS_Store
+._.DS_Store
+Generator/gridpacks/*
+Generator/cards/ZTo2Mu2Tau/ZTo2Mu2Tau_2TauTo2Mu/*.dat
