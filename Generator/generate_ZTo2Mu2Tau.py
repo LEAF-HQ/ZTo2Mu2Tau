@@ -60,7 +60,6 @@ username       = os.environ['USER']
 arch_tag       = 'slc7_amd64_gcc700'
 cmssw_tag_gp   = 'CMSSW_10_6_19'
 cmssw_tag_sim  = 'CMSSW_10_6_28'
-cmssw_tag_hlt  = 'CMSSW_9_4_14_UL_patch1'
 # campaign       = 'UL17'
 campaign       = 'UL18'
 sampletype     = 'ZTo2Mu2Tau'
@@ -104,7 +103,7 @@ folderstructure = {
     },
     'HLT': {
         'pset':            psetfolder+'/pset_04_hlt.py',
-        'cmsswtag':        cmssw_tag_hlt,
+        'cmsswtag':        'CMSSW_9_4_14_UL_patch1',
         'jobnametag':      'hlt',
         'outfilenamebase': 'HLT',
         'infilepathtag':   'DR/' + sampletype,
@@ -158,7 +157,7 @@ folderstructure = {
     },
     'HLT': {
         'pset':            psetfolder+'/pset_04_hlt.py',
-        'cmsswtag':        cmssw_tag_hlt,
+        'cmsswtag':        'CMSSW_10_2_16_UL',
         'jobnametag':      'hlt',
         'outfilenamebase': 'HLT',
         'infilepathtag':   'DR/%s/%s' % (campaign, sampletype),
@@ -208,11 +207,11 @@ EventGenerator = GensimRunner(processnames=processes, tag=tag, individual_settin
 # EventGenerator.SubmitGridpacks(runtime=(5,00,00))
 # EventGenerator.SubmitGenerationStep(generation_step='GENSIM', ncores=2, runtime=(3,00,00), mode='new')
 # EventGenerator.SubmitGenerationStep(generation_step='GENSIM', ncores=2, runtime=(3,00,00), mode='resubmit')
-EventGenerator.SubmitGenerationStep(generation_step='GENSIM', ncores=8, runtime=(3,00,00), mode='resubmit')
+# EventGenerator.SubmitGenerationStep(generation_step='GENSIM', ncores=8, runtime=(3,00,00), mode='resubmit')
 # EventGenerator.SubmitGenerationStep(generation_step='DR', ncores=8, runtime=(3,00,00), mode='new')
 # EventGenerator.SubmitGenerationStep(generation_step='DR', ncores=8, runtime=(3,00,00), mode='resubmit')
 # EventGenerator.SubmitGenerationStep(generation_step='DR', ncores=8, runtime=(10,00,00), mode='resubmit')
-# EventGenerator.SubmitGenerationStep(generation_step='HLT', ncores=8, runtime=(3,00,00), mode='new')
+EventGenerator.SubmitGenerationStep(generation_step='HLT', ncores=8, runtime=(3,00,00), mode='new')
 # EventGenerator.SubmitGenerationStep(generation_step='HLT', ncores=8, runtime=(3,00,00), mode='resubmit')
 # EventGenerator.RemoveSamples(generation_step='DR')
 # EventGenerator.SubmitGenerationStep(generation_step='AOD', ncores=4, runtime=(2,00,00), mode='new')
