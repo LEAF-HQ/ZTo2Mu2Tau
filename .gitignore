@@ -11,3 +11,4 @@ PostAnalyzer/lib/*
 ._.DS_Store
 Generator/gridpacks/*
 Generator/cards/ZTo2Mu2Tau/ZTo2Mu2Tau_2TauTo2Mu/*.dat
+Generator/cards/DYBBTo2Tau/DYBBTo2Tau_2TauTo2Mu/*.dat
