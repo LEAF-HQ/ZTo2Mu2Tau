@@ -25,9 +25,7 @@ import tdrstyle_all as TDR
 from CrossSectionRunner import *
 from GensimRunner import *
 
-# processes = ['ZToMuMuTauTau_Inclusive'] # (old) 100*1000 events
-# processes = ['ZTo2Mu2Tau_1TauToMu'] # (new) 200*1000 events
-processes = ['ZTo2Mu2Tau_2TauTo2Mu'] # (new-new) 1000*1000 events each
+processes = ['DYBBTo2Tau_2TauTo2Mu'] # (new-new) 1000*1000 events each
 
 processes_xsec = processes
 
@@ -62,7 +60,7 @@ cmssw_tag_gp   = 'CMSSW_10_6_19'
 cmssw_tag_sim  = 'CMSSW_10_6_28'
 # campaign       = 'UL17'
 campaign       = 'UL18'
-sampletype     = 'ZTo2Mu2Tau'
+sampletype     = 'DYBBTo2Tau'
 
 
 workarea       = os.path.join('/work', username)
@@ -205,7 +203,7 @@ submit = True
 EventGenerator = GensimRunner(processnames=processes, tag=tag, individual_settings=individual_settings, general_settings=general_settings[campaign], workdir_slurm=workdir_slurm, workarea=workarea, basefolder=basefolder, cardfolder=cardfolder, mgfolder=mgfolder, generatorfolder=generatorfolder, gridpackfolder=gridpackfolder, arch_tag=arch_tag, cmssw_tag_gp=cmssw_tag_gp, T2_director=T2_director, T2_path=T2_path, T2_director_root=T2_director_root, T3_director=T3_director, T3_path=T3_path, campaign=campaign, folderstructure=folderstructure[campaign], maxindex=maxindex, nevents=nevents, submit=submit)
 # EventGenerator.ProduceCards()
 # EventGenerator.SubmitGridpacks(runtime=(5,00,00))
-# EventGenerator.SubmitGenerationStep(generation_step='GENSIM', ncores=2, runtime=(3,00,00), mode='new')
+EventGenerator.SubmitGenerationStep(generation_step='GENSIM', ncores=2, runtime=(3,00,00), mode='new')
 # EventGenerator.SubmitGenerationStep(generation_step='GENSIM', ncores=2, runtime=(3,00,00), mode='resubmit')
 # EventGenerator.SubmitGenerationStep(generation_step='GENSIM', ncores=8, runtime=(3,00,00), mode='resubmit')
 # EventGenerator.SubmitGenerationStep(generation_step='DR', ncores=8, runtime=(3,00,00), mode='new')
@@ -218,7 +216,7 @@ EventGenerator = GensimRunner(processnames=processes, tag=tag, individual_settin
 # EventGenerator.SubmitGenerationStep(generation_step='AOD', ncores=4, runtime=(2,00,00), mode='resubmit')
 # EventGenerator.RemoveSamples(generation_step='HLT')
 # EventGenerator.SubmitGenerationStep(generation_step='MINIAODv2', ncores=2, runtime=(1,00,00), mode='new')
-EventGenerator.SubmitGenerationStep(generation_step='MINIAODv2', ncores=2, runtime=(1,00,00), mode='resubmit')
+# EventGenerator.SubmitGenerationStep(generation_step='MINIAODv2', ncores=2, runtime=(1,00,00), mode='resubmit')
 
 
 
