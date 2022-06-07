@@ -1,0 +1,4 @@
+import model sm-ckm_no_b_mass
+define bb = b b~
+generate p p > ta+ ta- bb bb /h
+output $OUTPUT
